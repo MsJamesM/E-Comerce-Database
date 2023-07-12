@@ -3,18 +3,26 @@ const { Tag, Product, ProductTag } = require("../../models");
 
 // finds all tags
 router.get("/", async (req, res) => {
-  const tagData = await Tag.findAll({
-    include: [{ model: Product }],
-  });
-  res.json(tagData);
+  try {
+    const tagData = await Tag.findAll({
+      include: [{ model: Product }],
+    });
+    res.json(tagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // finds a single tag by id
 router.get("/:id", async (req, res) => {
-  const productTagData = await Tag.findByPk(req.params.id, {
-    include: [{ model: Product }],
-  });
-  res.json(productTagData);
+  try {
+    const productTagData = await Tag.findByPk(req.params.id, {
+      include: [{ model: Product }],
+    });
+    res.json(productTagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // creates a new tag
@@ -48,7 +56,7 @@ router.delete("/:id", async (req, res) => {
     const productTagData = await Tag.destroy({
       include: [{ model: Product }],
     });
-    if (!productData) {
+    if (!productTagData) {
       res.status(404).json({ message: "No tag with this id!" });
       return;
     }
