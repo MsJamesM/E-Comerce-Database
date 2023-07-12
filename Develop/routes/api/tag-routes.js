@@ -53,14 +53,14 @@ router.put("/:id", async (req, res) => {
 // deletes a tag by id
 router.delete("/:id", async (req, res) => {
   try {
-    const productTagData = await Tag.destroy({
-      include: [{ model: Product }],
+    const tagData = await Tag.destroy({
+      where: { id: req.params.id },
     });
-    if (!productTagData) {
+    if (!tagData) {
       res.status(404).json({ message: "No tag with this id!" });
       return;
     }
-    res.status(200).json(productTagData);
+    res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
   }
