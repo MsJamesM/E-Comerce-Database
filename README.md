@@ -26,9 +26,9 @@ To start your server, run the following command:
 
 Make sure your .env file is properly configured. [What is an .env file?](https://thenewstack.io/what-is-the-docker-env-file-and-how-do-you-use-it/)
 
-Next, open Insomnia. To modify the database using Insomnia, please refer to the following visuals. [(Full video)](https://drive.google.com/file/d/1cJdnz7nfvXlLUB-HVfD5uceNwtda5YbJ/view?usp=sharing)
+Next, open Insomnia. To modify the database using Insomnia, please refer to the following visuals. [(Full video)](https://drive.google.com/file/d/1tw-aQ1VIMOytL6Q-oUuYfMwolYsNREE_/view?usp=drive_link)
 
-![Gif](./assets/walkthrough-gif.gif)
+![Gif](./Assets/small-walkthrough-gif.gif)
 
 ## Credits
 
